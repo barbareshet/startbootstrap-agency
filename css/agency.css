@@ -204,6 +204,92 @@ header.masthead .intro-text .intro-heading {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+header.masthead .bouncing-arrow {
+  position: relative;
+}
+
+header.masthead .bouncing-arrow .arrow {
+  position: absolute;
+  bottom: 75px;
+  text-align: center;
+  right: 0;
+  left: 0;
+  height: 20px;
+  z-index: 5;
+}
+
+header.masthead .bouncing-arrow .arrow .fa {
+  color: yellow;
+}
+
+header.masthead .bouncing-arrow .arrow .fa.fade {
+  opacity: 0;
+  -webkit-transition: 1s all ease-out;
+  transition: 1s all ease-out;
+}
+
+header.masthead .bouncing-arrow .arrow .fa:hover {
+  cursor: pointer;
+}
+
+header.masthead .bouncing-arrow .arrow.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@media screen and (max-width: 768px) {
+  header.masthead .bouncing-arrow .arrow {
+    bottom: 30px;
+  }
+  header.masthead .bouncing-arrow .arrow img {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@-webkit-keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -12px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -6px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -1px, 0);
+  }
+}
+
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -12px, 0);
+    transform: translate3d(0, -12px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -6px, 0);
+    transform: translate3d(0, -6px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
 @media (min-width: 768px) {
   header.masthead .intro-text {
     padding-top: 300px;

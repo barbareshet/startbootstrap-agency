@@ -25,6 +25,10 @@ header.masthead {
       @include heading-font;
     }
   }
+  .bouncing-arrow{
+    position: relative;
+    @import "../components/bouncing_arrow";
+  }
 }
 @media(min-width:768px) {
   header.masthead {
